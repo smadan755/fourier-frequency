@@ -37,3 +37,4 @@ iDFT_mat = np.array([
 
 
 print(f"This is the iDFT of x: {clean_complex(np.dot(iDFT_mat,dft_x))/4}")
+
