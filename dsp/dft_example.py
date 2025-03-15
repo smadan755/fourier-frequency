@@ -10,14 +10,13 @@ def main():
     # Let's analyze a sine function sampled at discrete intervals
 
     # Create an array of time points
-    num_samples = 100
-    t = np.linspace(0, 1, num_samples)  # 100 points from 0 to 1
+    num_samples = 400
+    t = np.linspace(0, 50, num_samples)  # 100 points from 0 to 1
 
     # Choose a frequency for the samples
-    frequency = 5  # 5 cycles in our 0-1 time range
 
     # Generate the composite sine wave with two frequency components
-    sin_sampled = np.sin(2 * np.pi * frequency * t) + np.sin(2 * np.pi * 3 * frequency * t)
+    sin_sampled = np.sin(np.pi * 1/8 * t) + np.sin(np.pi * 21/50 * t)
 
     # Compute the DFT manually
     w = np.exp(-1j * ((2 * np.pi) / len(sin_sampled)))
@@ -40,7 +39,7 @@ def main():
 
     # Plot the time domain signal
     ax1.plot(t, sin_sampled, 'b-')
-    ax1.set_title(f'Time Domain: Composite Sine Wave (Frequencies: {frequency} Hz and {3 * frequency} Hz)')
+    ax1.set_title(f'Time Domain: Composite Sine Wave ')
     ax1.set_xlabel('Time (s)')
     ax1.set_ylabel('Amplitude')
     ax1.grid(True)
